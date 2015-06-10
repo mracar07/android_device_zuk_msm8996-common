@@ -76,6 +76,7 @@ sdm.perf_hint_window=50
 vendor.audio.hw.aac.encoder=true
 
 # Media
+vendor.vidc.debug.perf.mode=2
 vendor.vidc.enc.disable.pq=true
 vendor.audio.flac.sw.decoder.24bit=true
 media.aac_51_output_enabled=true
@@ -83,6 +84,7 @@ mm.enable.smoothstreaming=true
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.vidc.enc.disable.pq=true
+vidc.enc.dcvs.extra-buff-count=2
 
 # Miracast
 persist.debug.wfd.enable=1
