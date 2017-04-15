@@ -636,7 +636,7 @@ etc/permissions/telephonyservice.xml
 -framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/port-bridge
-vendor/bin/netmgrd
+vendor/bin/netmgrd|7b5d7b75e2650e3a975b46cfe68e2c7872d840e8
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
