@@ -231,14 +231,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/msm8996-tasha-mtp-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/msm8996-tasha-mtp-snd-card_Button_Jack.kl \
     $(LOCAL_PATH)/keylayout/qpnp_pon.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qpnp_pon.kl
 
+# IPC router config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
-
-# IPC router config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # IPv6
 PRODUCT_PACKAGES += \
