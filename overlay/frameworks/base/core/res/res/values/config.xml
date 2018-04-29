@@ -438,7 +438,7 @@
     <!--integer name="config_proximityCheckTimeout">3000</integer-->
     <!--bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool-->
 
-    <integer name="config_flashlightProximityTimeout">3000</integer>
+    <!--integer name="config_flashlightProximityTimeout">3000</integer-->
 
     <!-- Whether home button can wake device
     <bool name="config_homeCanWake">true</bool> -->
@@ -458,9 +458,9 @@
     <bool name="config_setColorTransformAccelerated">true</bool>
 
     <!-- Enable full screen DT2S in lockscreen -->
-    <bool name="fullScreenDT2S">true</bool>
+    <!--bool name="fullScreenDT2S">true</bool-->
 
     <!-- The duration (in milliseconds) that the radio will scan for a signal
          when there's no network connection. If the scan doesn't timeout, use zero -->
-    <integer name="config_radioScanningTimeout">5000</integer>
+    <integer name="config_radioScanningTimeout">500</integer>
 </resources>
