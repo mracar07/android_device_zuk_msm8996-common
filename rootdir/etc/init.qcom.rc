@@ -441,11 +441,6 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
 
-service qvop-daemon /system/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
 # start up peripheral manager
 service per_mgr /vendor/bin/pm-service
     class late_start
@@ -472,17 +467,6 @@ service qseecomd /vendor/bin/qseecomd
    group root
    writepid /dev/cpuset/system-background/tasks
 
-service seempd /system/bin/seempd
-   class late_start
-   user system
-   group system
-   socket seempdw dgram 0666 system system
-
-service secotad /system/bin/secotad
-   class late_start
-   user system
-   group system
-
 service thermal-engine /vendor/bin/thermal-engine
    class main
    user root
@@ -502,11 +486,6 @@ service adsprpcd /vendor/bin/adsprpcd
    class main
    user media
    group media
-
-service audiod /system/bin/audiod
-   class late_start
-   user system
-   group system
 
 service imsqmidaemon /vendor/bin/imsqmidaemon
     class main
@@ -553,12 +532,6 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start vendor.imsrcsservice
 
-service dts_configurator /system/bin/dts_configurator
-    class late_start
-    user system
-    group system media audio
-    oneshot
-
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
@@ -584,12 +557,6 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service tlocd /system/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
-    seclabel u:r:tlocd:s0
-
 service readmac /vendor/bin/readmac
     class main
     user root
@@ -601,16 +568,6 @@ service energy-awareness /vendor/bin/energy-awareness
     user root
     group system
     oneshot
-
-service mdtpd /vendor/bin/mdtpd
-    class late_start
-    user root
-    group system radio drmrpc
-
-service qcomsysd /system/bin/qcom-system-daemon
-    class main
-    user root
-    group root diag
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
@@ -710,49 +667,11 @@ service start_hci_filter /vendor/bin/wcnss_filter
     seclabel u:r:wcnss_filter:s0
     disabled
 
-on property:wc_transport.start_root=true
-    start hci_filter_root
-
-on property:wc_transport.start_root=false
-    stop hci_filter_root
-
-service hci_filter_root /vendor/bin/wcnss_filter
-    class late_start
-    user bluetooth
-    group bluetooth diag system
-    disabled
-
-on property:wc_transport.start_root=true
-    start hci_filter_root
-
-on property:wc_transport.start_root=false
-    stop hci_filter_root
-
-service hci_filter_root /vendor/bin/wcnss_filter
-    class late_start
-    user bluetooth
-    group bluetooth diag system
-    seclabel u:r:wcnss_filter:s0
-    disabled
-
-service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
-    class late_start
-    user root
-    group bluetooth net_bt_admin misc oem_2901 net_bt
-    disabled
-    oneshot
-
 service port-bridge /vendor/bin/port-bridge
     class main
     user radio system
     group radio system inet
     oneshot
-
-service atfwd /vendor/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-    writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /vendor/bin/netmgrd
     class main
@@ -806,19 +725,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service ptt_socket_app /system/bin/ptt_socket_app -d
-    class main
-    user root
-    group root
-    oneshot
-
-service wifi_fccutild /system/bin/wifi_fccutild
-    user system
-    group system inet net_admin
-    socket wififccutild_server dgram 0660 system system
-    disabled
-    oneshot
-
 service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -860,29 +766,8 @@ service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service wfdservice /system/bin/wfdservice
-    class main
-    user system
-    group audio camera inet net_bt_stack drmrpc media_rw media input net_admin
-    # removed these because of limit of 12 groups
-    #graphics net_bt net_bt_admin bluetooth
-
-# Seemp health service
-service seemp_healthd /vendor/bin/seemp_healthd
-    class late_start
-    user system
-    group system
-
 on charger
     setprop persist.sys.usb.config charging
-    
-#add poweroffhandler
-service poweroffhandler /system/bin/poweroffhandler
-    class core
-    user media
-    group graphics audio
-    disabled
-    oneshot
 
 # Logcat dump daemon, dumps logs to logdump partition
 service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootdevice/by-name/logdump
