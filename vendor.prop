@@ -144,3 +144,6 @@ persist.data.df.dev_name=rmnet_usb0
 
 # TimeService
 persist.timed.enable=true
+persist.delta_time.enable=true
+
+
