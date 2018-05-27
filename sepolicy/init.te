@@ -17,3 +17,4 @@ allow init { tee_device diag_device }:chr_file { write read open ioctl };
 allow init ion_device:chr_file { read open ioctl };
 
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
+

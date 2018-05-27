@@ -1,1 +1,2 @@
+allow rmt_storage qti_debugfs:file write;
 allow rmt_storage rmt_storage:capability sys_admin;
