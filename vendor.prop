@@ -30,6 +30,7 @@ ro.bluetooth.wipower=true
 # Camera
 persist.camera.preview.ubwc=0
 persist.camera.video.ubwc=0
+persist.camera.gyro.disable=0
 ro.persist.qcapb=1
 camera.disable_zsl_mode=1
 
@@ -93,6 +94,7 @@ persist.rild.nitz_short_ons_3=""
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Radio
 DEVICE_PROVISIONED=1
