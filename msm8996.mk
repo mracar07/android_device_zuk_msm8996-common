@@ -171,9 +171,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     chargeonlymode
 
-# HWUI overrides
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
-
 # Graphics
 PRODUCT_PACKAGES += \
     libsdm-disp-apis
