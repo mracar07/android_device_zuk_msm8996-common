@@ -144,16 +144,6 @@ on boot
     chown system system /sys/class/timed_output/vibrator/vtg_level
     chmod 0664 /sys/class/timed_output/vibrator/vtg_level
 
-    # Allow access to sensors device attributes
-    chown system system /sys/class/sensors/MPU6050-accel/enable
-    chown system system /sys/class/sensors/MPU6050-accel/poll_delay
-    chown system system /sys/class/sensors/MPU6050-gyro/enable
-    chown system system /sys/class/sensors/MPU6050-gyro/poll_delay
-    chown system system /sys/class/sensors/apds9930-light/enable
-    chown system system /sys/class/sensors/apds9930-light/poll_delay
-    chown system system /sys/class/sensors/apds9930-proximity/enable
-    chown system system /sys/class/sensors/apds9930-proximity/poll_delay
-
     # Fingerprint
     chown system system /sys/devices/soc/soc:fpc1020/irq
     chmod 0660 /sys/devices/soc/soc:fpc1020/irq
