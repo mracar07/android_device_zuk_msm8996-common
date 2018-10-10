@@ -1,6 +1,9 @@
 type fpc_data_file, core_data_file_type, data_file_type, file_type;
 type thermal_data_file, core_data_file_type, data_file_type, file_type;
 
+# /data
+type vendor_misc_audio_data_file, data_file_type, file_type;
+
 # /sys
 type sysfs_camera, sysfs_type, fs_type;
 type sysfs_enable_ps_sensor, sysfs_type, fs_type;
