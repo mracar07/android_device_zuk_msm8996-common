@@ -88,8 +88,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480 \
-    vendor.display.disable_rotator_downscale=1 \
-    debug.hwui.renderer=opengl
+    vendor.display.disable_rotator_downscale=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
